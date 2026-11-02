@@ -6,7 +6,7 @@ gridVal = {}
 backgroundColors = {
     {0, 255, 255},
     {255, 0, 255},
-    {255, 255, 0}, 
+    {255, 255, 0},
 }
 --facial features--
 Leb = {}
@@ -18,7 +18,8 @@ mouths = {}
 
 function setup()
     size(1100, 800)
-
+    windowTitle("random face")
+    
     genFace()
     Leb = {
         loadImage("assets/Leb1.png"),
@@ -126,5 +127,10 @@ function draw()
     image(Reyes[rightEye], 600, 200)
     image(noses[nose], noseX, noseY, noseSize, noseSize)
     image(mouths[mouth], 300, 500)
-
 end
+
+function keyPressed()
+  if key == 's' then
+    save()
+  end
+ end
